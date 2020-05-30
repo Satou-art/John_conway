@@ -4,7 +4,10 @@ import os
 
 def draw(main_list):
     time.sleep(0.0625)
-    os.system("cls")
+    if os.name() == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
     for i in range(len(main_list)):
         print("".join(main_list[i]))
 
@@ -36,7 +39,7 @@ def main():
     chance = 8
     main = list()
     nmain = list()
-    alive = "#"
+    alive = "+"
     dead = " "
 
     #TODO : the first painting
